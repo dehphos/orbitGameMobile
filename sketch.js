@@ -79,7 +79,6 @@ class Particle {
 }
 
 function resetAndChangePlayerCount(){
-  changing = true 
   playerCount = playerslider.value()
   playerList = []
   for (let i = 0; i < playerCount; i++) {
@@ -87,11 +86,6 @@ function resetAndChangePlayerCount(){
     playerList.push(p)
   }
 }
-
-function touchReleased(){
-  if (changing == true){
-  resetAndChangePlayerCount()
-  changing = false}}
 
 function setup() {
   pixelDensity(1)
@@ -117,8 +111,7 @@ function setup() {
 function draw() {
   background(10)
   for (i in playerList){
-    if (changing == true) {playerList[i].draw()}else{
-    playerList[i].play()}}
+    playerList[i].draw()
   prevtime = currtime
   currtime = Date.now()
   let fps = 1000/(currtime-prevtime)
