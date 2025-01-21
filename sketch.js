@@ -1,9 +1,7 @@
-
 var ww = window.innerWidth 
 var wh = window.innerHeight *0.95
 var playerCount = 100
 var playerList = []
-var changing = false
 var currtime
 var prevtime
 
@@ -13,8 +11,8 @@ class Particle {
     this.color = color(random(255), random(255), random(255))
     this.x = x
     this.y = y
-    this.vx = 0
-    this.vy = 0
+    this.vx = 1
+    this.vy = 1
     this.ax = 0
     this.ay = 0
     this.prev = {x: x, y: x}
@@ -97,7 +95,6 @@ function setup() {
   createCanvas(ww, wh)
   frameRate(60)
   playerslider = createSlider(1,1500,playerCount,1)
-  playerslider.mousePressed(resetAndChangePlayerCount)
   resetbutton = createButton("Reset")
   resetbutton.mousePressed(resetAndChangePlayerCount)
   textSize(20)
@@ -116,4 +113,7 @@ function draw() {
   let fps = 1000/(currtime-prevtime)
   text("fps: " + fps.toFixed(2), 10, 30)
   text("Particles: " + playerCount, 10, 60)
+  text(playerList.length, 10, 90)
+  text(playerList[0].x, 10, 120)
+  playerList[0].x += 1
 }
