@@ -88,7 +88,7 @@ function resetAndChangePlayerCount(){
   }
 }
 
-function mouseReleased(){
+function touchReleased(){
   if (changing == true){
   resetAndChangePlayerCount()
   changing = false}}
