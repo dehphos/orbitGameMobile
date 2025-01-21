@@ -113,7 +113,4 @@ function draw() {
   let fps = 1000/(currtime-prevtime)
   text("fps: " + fps.toFixed(2), 10, 30)
   text("Particles: " + playerCount, 10, 60)
-  text(playerList.length, 10, 90)
-  text(playerList[0].x, 10, 120)
-  playerList[0].x += 1
 }
