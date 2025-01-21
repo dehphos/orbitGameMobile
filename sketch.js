@@ -110,12 +110,10 @@ function setup() {
 
 function draw() {
   background(10)
-  for (i in playerList){
-    playerList[i].draw()
+  for (i in playerList) playerList[i].play()
   prevtime = currtime
   currtime = Date.now()
   let fps = 1000/(currtime-prevtime)
   text("fps: " + fps.toFixed(2), 10, 30)
   text("Particles: " + playerCount, 10, 60)
-
-}5
+}
