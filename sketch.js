@@ -104,6 +104,8 @@ function setup() {
   frameRate(60)
   playerslider = createSlider(1,1500,playerCount,1)
   playerslider.mousePressed(resetAndChangePlayerCount)
+  resetbutton = createButton("Reset")
+  resetbutton.mousePressed(resetAndChangePlayerCount)
   textSize(20)
   fill(235)
   strokeWeight(1)
